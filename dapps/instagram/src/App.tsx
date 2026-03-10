@@ -7,7 +7,7 @@ import {
   ACCOUNTS, deriveWallet, useIntersectionObserver, short, ago, publishBlob,
   type Wallet,
 } from "./utils.ts";
-import cdmJson from "../../../cdm.json";
+import cdmJson from "../cdm.json";
 
 // ---------------------------------------------------------------------------
 // CDM — one connection for the lifetime of the page
