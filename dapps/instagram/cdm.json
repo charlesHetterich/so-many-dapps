@@ -8,16 +8,14 @@
   },
   "dependencies": {
     "e3e86a66aadc74a1": {
-      "@example/counter": "latest",
-      "@example/counter-writer": "latest",
-      "@example/counter-reader": "latest"
+      "@example/instagram": "latest"
     }
   },
   "contracts": {
     "e3e86a66aadc74a1": {
-      "@example/counter": {
+      "@example/instagram": {
         "version": 0,
-        "address": "0xC47274C987491d58b99747F344AE661986B580E8",
+        "address": "0x90A7b2DcdE1bB922d81b20869E0a48a7D7DA092A",
         "abi": [
           {
             "type": "constructor",
@@ -26,80 +24,108 @@
           },
           {
             "type": "function",
-            "name": "increment",
-            "inputs": [],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-          },
-          {
-            "type": "function",
-            "name": "getCount",
-            "inputs": [],
-            "outputs": [
-              {
-                "name": "",
-                "type": "uint32"
-              }
-            ],
-            "stateMutability": "view"
-          }
-        ],
-        "metadataCid": "bafk2bzacedfjnsqjwbzbuvqgelzp5g7klbipuksnsepf3efit55u5l4dsyjkq"
-      },
-      "@example/counter-writer": {
-        "version": 0,
-        "address": "0xF0cfa61E013aa6E64AbDF15FA8f1E6739B060Bd0",
-        "abi": [
-          {
-            "type": "constructor",
-            "inputs": [],
-            "stateMutability": "nonpayable"
-          },
-          {
-            "type": "function",
-            "name": "writeIncrement",
-            "inputs": [],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-          },
-          {
-            "type": "function",
-            "name": "writeIncrementN",
+            "name": "createPost",
             "inputs": [
               {
-                "name": "n",
-                "type": "uint32"
+                "name": "description",
+                "type": "string"
+              },
+              {
+                "name": "photo_cid",
+                "type": "string"
               }
             ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-          }
-        ],
-        "metadataCid": "bafk2bzacebcwes6powrpuyhv5dpemnavts3xylrbaqimr4qebbkyvdu5vsbyq"
-      },
-      "@example/counter-reader": {
-        "version": 0,
-        "address": "0x45D71e0475F675816380e36e384fF69ebF503Ad1",
-        "abi": [
-          {
-            "type": "constructor",
-            "inputs": [],
-            "stateMutability": "nonpayable"
+            "outputs": [
+              {
+                "name": "",
+                "type": "uint64"
+              }
+            ],
+            "stateMutability": "view"
           },
           {
             "type": "function",
-            "name": "readCount",
+            "name": "getPostCount",
+            "inputs": [
+              {
+                "name": "user",
+                "type": "bytes20"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "",
+                "type": "uint64"
+              }
+            ],
+            "stateMutability": "view"
+          },
+          {
+            "type": "function",
+            "name": "getPost",
+            "inputs": [
+              {
+                "name": "user",
+                "type": "bytes20"
+              },
+              {
+                "name": "index",
+                "type": "uint64"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "",
+                "type": "tuple",
+                "components": [
+                  {
+                    "name": "description",
+                    "type": "string"
+                  },
+                  {
+                    "name": "photo_cid",
+                    "type": "string"
+                  },
+                  {
+                    "name": "timestamp",
+                    "type": "uint64"
+                  }
+                ]
+              }
+            ],
+            "stateMutability": "view"
+          },
+          {
+            "type": "function",
+            "name": "getUserCount",
             "inputs": [],
             "outputs": [
               {
                 "name": "",
-                "type": "uint32"
+                "type": "uint64"
+              }
+            ],
+            "stateMutability": "view"
+          },
+          {
+            "type": "function",
+            "name": "getUserAt",
+            "inputs": [
+              {
+                "name": "index",
+                "type": "uint64"
+              }
+            ],
+            "outputs": [
+              {
+                "name": "",
+                "type": "bytes20"
               }
             ],
             "stateMutability": "view"
           }
         ],
-        "metadataCid": "bafk2bzaceaadlofrckys7rtqhaa5j5udfcto2eay4hh4u7tmtm5wh44tejaiw"
+        "metadataCid": "bafk2bzacebm65fmgb4flzblexv5cxzla62omm6tki244oqauljim7kuetj6m4"
       }
     }
   }

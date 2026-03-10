@@ -1,8 +1,8 @@
 [package]
-name = "counter_writer"
+name = "instagram"
 version.workspace = true
 edition.workspace = true
-description = "Increments the shared counter contract via cross-contract CDM reference"
+description = "Minimal on-chain Instagram — posts indexed by (user, index)"
 authors.workspace = true
 homepage.workspace = true
 
@@ -10,13 +10,11 @@ homepage.workspace = true
 path = "lib.rs"
 
 [[bin]]
-name = "counter_writer"
+name = "instagram"
 path = "lib.rs"
 
 [dependencies]
-cdm = { workspace = true }
 pvm_contract = { workspace = true }
 polkavm-derive = { workspace = true }
 parity-scale-codec = { workspace = true }
 picoalloc = { workspace = true }
-counter = { path = "../counter" }
